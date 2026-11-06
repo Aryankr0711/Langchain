@@ -1,10 +1,10 @@
-from langchain_openai import EmbeddingOpenAI
+from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
 
 load_dotenv()
 
-model= EmbeddingOpenAI(model="text-embedding-3-large")
+model= OpenAIEmbeddings(model="text-embedding-3-large")
 
-result= model.invoke("What is the capital of India?")
+result= model.embed_query("What is the capital of India?")
 
 print(result)
